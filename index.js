@@ -1,3 +1,4 @@
+const prompt = require("prompt");
 const { turnLeft, turnRight, moveForward } = require("./moves");
 
 const grid = [
@@ -35,3 +36,20 @@ const pilotRover = (commands) => {
     }
   }
 };
+
+prompt.start();
+
+const promptCommands = () => {
+  prompt.get("commands", (err, res) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+
+    pilotRover(res.commands);
+    console.log(rover);
+    promptCommands();
+  });
+};
+
+promptCommands();
