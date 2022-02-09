@@ -38,7 +38,27 @@ const turnRight = (rover) => {
   }
 };
 
+const moveForward = (rover) => {
+  switch (rover.direction) {
+    case "N":
+      rover.y--;
+      break;
+    case "W":
+      rover.x--;
+      break;
+    case "S":
+      rover.y++;
+      break;
+    case "E":
+      rover.x++;
+      break;
+    default:
+      break;
+  }
+};
+
 module.exports = {
   turnLeft,
   turnRight,
+  moveForward,
 };

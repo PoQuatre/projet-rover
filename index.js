@@ -13,4 +13,6 @@ const grid = [
 
 const rover = {
   direction: "N",
+  x: 0,
+  y: 0,
 };
