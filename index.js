@@ -27,15 +27,25 @@ const pilotRover = (commands) => {
       case "l":
         turnLeft(rover);
         break;
+
       case "r":
         turnRight(rover);
         break;
+
       case "f":
         moveForward(rover);
         break;
+
       case "b":
         moveBackward(rover);
         break;
+
+      default:
+        console.error(
+          commands[i],
+          "is not a valid command (valid commands are 'l', 'r', 'f' and 'b')"
+        );
+        return;
     }
   }
 };
