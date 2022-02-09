@@ -21,6 +21,18 @@ const rover = {
   travelLog: [],
 };
 
+const drawGrid = () => {
+  for (let y = 0; y < 10; y++) {
+    for (let x = 0; x < 10; x++) {
+      grid[y][x] = " ";
+    }
+  }
+
+  grid[rover.y][rover.x] = rover.direction;
+
+  console.table(grid);
+};
+
 const pilotRover = (commands) => {
   for (let i = 0; i < commands.length; i++) {
     switch (commands[i].toLowerCase()) {
@@ -60,9 +72,13 @@ const promptCommands = () => {
     }
 
     pilotRover(res.commands);
+
+    drawGrid();
     console.log(rover);
+
     promptCommands();
   });
 };
 
+drawGrid();
 promptCommands();
