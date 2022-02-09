@@ -39,6 +39,11 @@ const turnRight = (rover) => {
 };
 
 const moveForward = (rover) => {
+  rover.travelLog.push({
+    x: rover.x,
+    y: rover.y,
+  });
+
   switch (rover.direction) {
     case "N":
       rover.y--;

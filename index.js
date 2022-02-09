@@ -17,6 +17,7 @@ const rover = {
   direction: "N",
   x: 0,
   y: 0,
+  travelLog: [],
 };
 
 const pilotRover = (commands) => {
