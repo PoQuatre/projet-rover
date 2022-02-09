@@ -97,8 +97,68 @@ const moveForward = (rover) => {
   }
 };
 
+const moveBackward = (rover) => {
+  switch (rover.direction) {
+    case "N":
+      if (rover.y >= 9) {
+        console.error("You cannot move in this direction!");
+        break;
+      }
+
+      rover.travelLog.push({
+        x: rover.x,
+        y: rover.y,
+      });
+      rover.y++;
+      break;
+
+    case "W":
+      if (rover.x >= 9) {
+        console.error("You cannot move in this direction!");
+        break;
+      }
+
+      rover.travelLog.push({
+        x: rover.x,
+        y: rover.y,
+      });
+      rover.x++;
+      break;
+
+    case "S":
+      if (rover.y <= 0) {
+        console.error("You cannot move in this direction!");
+        break;
+      }
+
+      rover.travelLog.push({
+        x: rover.x,
+        y: rover.y,
+      });
+      rover.y--;
+      break;
+
+    case "E":
+      if (rover.x <= 0) {
+        console.error("You cannot move in this direction!");
+        break;
+      }
+
+      rover.travelLog.push({
+        x: rover.x,
+        y: rover.y,
+      });
+      rover.x--;
+      break;
+
+    default:
+      break;
+  }
+};
+
 module.exports = {
   turnLeft,
   turnRight,
   moveForward,
+  moveBackward,
 };

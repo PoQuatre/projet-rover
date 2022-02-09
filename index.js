@@ -1,5 +1,5 @@
 const prompt = require("prompt");
-const { turnLeft, turnRight, moveForward } = require("./moves");
+const { turnLeft, turnRight, moveForward, moveBackward } = require("./moves");
 
 const grid = [
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -32,6 +32,9 @@ const pilotRover = (commands) => {
         break;
       case "f":
         moveForward(rover);
+        break;
+      case "b":
+        moveBackward(rover);
         break;
     }
   }
